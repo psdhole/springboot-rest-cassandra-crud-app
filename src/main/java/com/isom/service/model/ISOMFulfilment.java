@@ -8,6 +8,7 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -19,11 +20,11 @@ public class ISOMFulfilment implements Serializable {
     @PrimaryKey
     private UUID id;
     @Column
-    public Double deliveryArrangementsId;
+    private Double deliveryArrangementsId;
     @Column
-    public String distanceUnitOfMeasure;
+    private String distanceUnitOfMeasure;
     private BusinessUnit businessUnit;
-//    public ShipToAddress shipToAddress;
-//    public List<ItemLine> itemLines;
-//    public List<ServiceType> serviceTypes;
+    private ShipToAddress shipToAddress;
+    private List<ItemLine> itemLines;
+    private List<ServiceType> serviceTypes;
 }
