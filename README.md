@@ -32,14 +32,9 @@ We can run the cassandra instance by installing it manually or  using docker wit
 After Cassandra installation, create a new keyspace and create a new table in Cassandra with following commands.
 
 ```
-CREATE KEYSPACE user_key_space WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
-
-CREATE TABLE user_key_space.user (id TimeUUID PRIMARY KEY, name text, surname text, age int);
-	CREATE INDEX usernameindex ON user_key_space.user (name);
-	CREATE INDEX usersurnameindex ON user_key_space.user (surname);
-	CREATE INDEX userageindex ON user_key_space.user (age);
+CREATE KEYSPACE isom_key_space WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 ```
-- Use above crated keyspace in our application by change 'keyspace' property in  application.properties to the value 'user_key_space'.
+- Use above crated keyspace in our application by change 'keyspace' property in  application.properties to the value 'isom_key_space'.
 
 ##### Run the Project.
 
@@ -53,5 +48,5 @@ CREATE TABLE user_key_space.user (id TimeUUID PRIMARY KEY, name text, surname te
 
 - Once the application is up, use below endpoint to perform the CRUD operations like GET, POST, PUT and DELETE.
 ```
-http://localhost:8080/api/v1/users
+http://localhost:8080/api/v1/fo
 ```
