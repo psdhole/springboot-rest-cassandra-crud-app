@@ -50,3 +50,20 @@ CREATE KEYSPACE isom_key_space WITH REPLICATION = { 'class' : 'SimpleStrategy', 
 ```
 http://localhost:8080/api/v1/fo
 ```
+
+##### Build and deploy the docker image for application.
+Refer below commands to build and deploy the docker image for the application as in some cases we might have to build the image locally and deploy the same to the specific environment's docker registry based on the profiles.
+
+- Build the image with specific profile.
+
+```
+    mvn package -P <active-profile>
+    e.g. mvn package -P dev-local
+```
+
+- Deploy/Push the image to the registry with specific profile.
+
+```
+    mvn dockerfile:push -P <active-profile>
+    e.g. mvn dockerfile:push -P dev-local
+```
