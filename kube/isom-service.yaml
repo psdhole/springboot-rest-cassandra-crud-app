@@ -20,6 +20,8 @@ spec:
           env:
             - name: CASSANDRA_HOST
               value: cassandra
+            - name: CASSANDRA_KEYSPACE
+              value: isom_key_space_2
           imagePullPolicy: Always
 ---
 apiVersion: v1
