@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -21,6 +22,12 @@ public class FOController {
     public List<ISOMFulfilment> getAll() {
         log.info("Getting ISOMFulfilment objects list from cassandra database...");
         return (List<ISOMFulfilment>) this.repository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ISOMFulfilment getFOById(@PathVariable UUID id) {
+        log.info("Getting ISOMFulfilment objects for id : " + id);
+        return this.repository.findById(id);
     }
 
     @PostMapping
