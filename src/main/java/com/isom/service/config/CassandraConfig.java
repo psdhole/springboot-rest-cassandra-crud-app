@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.core.cql.keyspace.CreateKeyspaceSpecification;
-import org.springframework.data.cassandra.core.cql.keyspace.DataCenterReplication;
 import org.springframework.data.cassandra.core.mapping.BasicCassandraMappingContext;
 import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.core.mapping.SimpleUserTypeResolver;
@@ -60,8 +59,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     protected List<CreateKeyspaceSpecification> getKeyspaceCreations() {
         return Arrays.asList(
                 CreateKeyspaceSpecification.createKeyspace(keyspaceName)
-                        .ifNotExists()
-                        .withNetworkReplication(DataCenterReplication.of("dc1", 3L)));
+                        .ifNotExists());
     }
 
     @Bean

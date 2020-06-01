@@ -2,12 +2,14 @@ package com.isom.service.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import java.io.Serializable;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @UserDefinedType("earliestShipDate")
